@@ -2,6 +2,7 @@ import AcmeLogo from '@/app/ui/acme-logo';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { lusitana } from '@/app/ui/fonts'
+import Image from 'next/image'
 
 export default function Page() {
   return (
@@ -26,7 +27,23 @@ export default function Page() {
           </Link>
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
-          {/* Add Hero Images Here */}
+          {/* 桌面端显示的图片 */}
+          <Image 
+           src='/hero-desktop.png'
+           width={1000}
+           height={700} 
+           className='hidden md:block' 
+           alt='桌面端显示' 
+          />
+
+          {/* 手机端显示的图片 */}
+          <Image 
+           src='/hero-mobile.png'
+           width={560}
+           height={620} 
+           className='block md:hidden' 
+           alt='手机端显示' 
+          />
         </div>
       </div>
     </main>
